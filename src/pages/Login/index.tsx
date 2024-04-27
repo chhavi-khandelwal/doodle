@@ -29,7 +29,7 @@ const Login = () => {
 	};
 
 	return (
-		<MainContainer>
+		<MainContainer role='region'>
 			<TitleContainer>DOODLE</TitleContainer>
 			<form onSubmit={submitHandler}>
 				<InputContainer>
@@ -41,8 +41,10 @@ const Login = () => {
 						value={email}
 						placeholder='Email'
 						onChange={(e) => setEmail(e.target.value)}
+						aria-invalid={emailError ? 'true' : 'false'}
+						aria-describedby='email-error'
 					/>
-					<Error>{emailError}</Error>
+					<Error id='email-error'>{emailError}</Error>
 				</InputContainer>
 
 				<InputContainer>
@@ -54,8 +56,10 @@ const Login = () => {
 						value={password}
 						placeholder='Password'
 						onChange={(e) => setPassword(e.target.value)}
+						aria-invalid={passwordError ? 'true' : 'false'}
+						aria-describedby='password-error'
 					/>
-					<Error>{passwordError}</Error>
+					<Error id='password-error'>{passwordError}</Error>
 				</InputContainer>
 
 				<SubmitButton type='submit'>Login</SubmitButton>

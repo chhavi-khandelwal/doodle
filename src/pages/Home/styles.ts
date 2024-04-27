@@ -5,10 +5,12 @@ export const MeetingContainer = styled.div`
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	width: 50%;
 	flex-direction: column;
 `;
-export const Meeting = styled(Link)``;
+export const MeetingLink = styled(Link)``;
+export const MeetingList = styled.ul`
+	margin-top: 12px;
+`;
 
 export const Button = styled.button`
 	border: none;

@@ -1,10 +1,11 @@
 import { useState, useEffect } from 'react';
 import {
 	MeetingContainer,
-	Meeting,
+	MeetingLink,
 	Button,
 	Container,
 	Section,
+	MeetingList,
 } from './styles';
 import { useAuth } from '../../auth/AuthProvider';
 import { useNavigate } from 'react-router-dom';
@@ -44,22 +45,25 @@ const Home = () => {
 				<Button
 					type='button'
 					onClick={generateMeeting}
+					aria-label='create new meeting'
 				>
 					Create new meeting
 				</Button>
 
 				<MeetingContainer>
 					<Heading>Scheduled Meetings</Heading>
-					{meetings.map(({ title, id, url }) => (
-						<div key={id}>
-							<Meeting
-								title={title}
-								to={`/meeting/${url}`}
-							>
-								{title}
-							</Meeting>
-						</div>
-					))}
+					<MeetingList aria-label='meeting list'>
+						{meetings.map(({ title, id, url }) => (
+							<li key={id}>
+								<MeetingLink
+									title={title}
+									to={`/meeting/${url}`}
+								>
+									{title}
+								</MeetingLink>
+							</li>
+						))}
+					</MeetingList>
 				</MeetingContainer>
 			</Section>
 		</Container>

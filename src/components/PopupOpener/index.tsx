@@ -11,9 +11,11 @@ const PopupOpener = ({ children }) => {
 	return (
 		<Container>
 			<ChatContainer $isOpen={isOpen}>{children}</ChatContainer>
-			<OpenPopupButton onClick={togglePopup}>{`${
-				isOpen ? 'Close' : 'Open'
-			} Chat`}</OpenPopupButton>
+			<OpenPopupButton
+				onClick={togglePopup}
+				aria-label='Toggle Chat popup'
+				role='button'
+			>{`${isOpen ? 'Close' : 'Open'} Chat`}</OpenPopupButton>
 		</Container>
 	);
 };

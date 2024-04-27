@@ -9,10 +9,10 @@ const Organizer = () => {
 			<Article>
 				Calendar and other details about the meeting come in here.
 				<br />
-				To chat click on the button in the right corner;
+				To chat click on the button in the right corner.
 			</Article>
 			<PopupOpener>
-				<Chat userType='organizer' />
+				<Chat />
 			</PopupOpener>
 		</PageContainer>
 	);

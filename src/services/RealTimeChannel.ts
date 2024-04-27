@@ -14,12 +14,13 @@ class RealTimeChannel {
 	}
 
 	public connect(eventName, handler): void {
+		//must handle multiple listeners like message_read, message_sent: Currently handling one
 		this.socket.on(eventName, handler);
 	}
 
 	public sendMessage(data: ChatDataType): void {
 		if (this.socket && this.socket.connected) {
-			this.socket.emit('message_sent', data);
+			this.socket.emit('outgoing_message', data);
 		} else {
 			console.error('Socket.IO is not connected');
 		}

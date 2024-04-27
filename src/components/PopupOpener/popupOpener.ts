@@ -27,6 +27,7 @@ export const ChatContainer = styled.div<{ $isOpen: boolean }>`
 	background-color: #fff;
 	border: 1px solid #ccc;
 	transition: right 0.3s ease;
-	box-shadow: -5px 5px 10px rgba(0, 0, 0, 0.2);
+	box-shadow: ${(props) =>
+		props.$isOpen ? '-5px 5px 10px rgba(0, 0, 0, 0.2)' : 'none'};
 	border-radius: 20px 0 0 20px;
 `;

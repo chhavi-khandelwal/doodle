@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import useWebSocket from '../../hooks/useWebSocket';
+import useRealTimeChannel from '../../hooks/useRealTimeChannel';
 import {
 	Input,
 	InputContainer,
@@ -19,19 +19,25 @@ const Chat = () => {
 	const onChatMessageReceived = (msg) => {
 		setMessages((prev) => [...prev, msg]);
 	};
-	const socket = useWebSocket('incoming_message', onChatMessageReceived);
+	const channel = useRealTimeChannel('incoming_message', onChatMessageReceived);
 
 	const handleSendMessage = (e) => {
 		e.preventDefault();
 		if (!newMessage) return;
-		socket.sendMessage({ user: user, text: newMessage });
+		channel.sendMessage({ user: user, text: newMessage });
 		setNewMessage('');
 	};
 
 	return (
-		<ChatContainer>
+		<ChatContainer
+			role='region'
+			aria-label='Chat'
+		>
 			<Heading>Chat with other invitees</Heading>
-			<MessageContainer>
+			<MessageContainer
+				role='log'
+				aria-label='chat conversation'
+			>
 				{messages.map((msg, index) => (
 					<TextContainer key={index}>
 						<Text $own={user === msg.user}>

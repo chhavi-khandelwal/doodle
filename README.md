@@ -1,30 +1,20 @@
-# React + TypeScript + Vite
+# Description
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Github shows list of popular github repos from last week which can be starred and filtered via starred status & language. One can update star status for each repo.
 
-Currently, two official plugins are available:
+# Setup
+ - `yarn install` To install dependencies
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+ - `yarn run dev` Runs the app in the development mode.
 
-## Expanding the ESLint configuration
+ - `yarn test`  To run tests - (Only added template for popupOpener)
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+ # Architecure
+ - Refer: https://miro.com/app/board/uXjVKO1CSs8=/
 
-- Configure the top-level `parserOptions` property like this:
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
+![alt text](https://github.com/chhavi-khandelwal/doodle/blob/main/public/doodle-chat-image.jpeg)
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+# Further additions
+ - Redux store to maintain states through actions
+ - Currently contain only skeleton for IndexedDB and messageScheduler

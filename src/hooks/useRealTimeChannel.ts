@@ -4,7 +4,7 @@ import RealTimeChannel from '../services/RealTimeChannel';
 const realTimeChannel = new RealTimeChannel();
 realTimeChannel.init('ws://localhost:3001');
 
-const useWebSocket = (eventName, onHandler) => {
+const useRealTimeChannel = (eventName, onHandler) => {
 	useEffect(() => {
 		realTimeChannel.connect(eventName, onHandler);
 
@@ -16,4 +16,4 @@ const useWebSocket = (eventName, onHandler) => {
 	return realTimeChannel;
 };
 
-export default useWebSocket;
+export default useRealTimeChannel;
