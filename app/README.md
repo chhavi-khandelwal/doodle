@@ -1,6 +1,5 @@
 # Description
-
-Github shows list of popular github repos from last week which can be starred and filtered via starred status & language. One can update star status for each repo.
+This is a FE app architecture which lists meetings and allow group chat on login authentication.
 
 # Setup
  - `yarn install` To install dependencies
@@ -12,9 +11,13 @@ Github shows list of popular github repos from last week which can be starred an
  # Architecure
  - Refer: https://miro.com/app/board/uXjVKO1CSs8=/
 
-
-![alt text](https://github.com/chhavi-khandelwal/doodle/blob/main/public/doodle-chat-image.jpeg)
-
 # Further additions
- - Redux store to maintain states through actions
- - Currently contain only skeleton for IndexedDB and messageScheduler
+ - Redux store to maintain states through actions.
+ - Currently, contains only skeleton for IndexedDB and messageScheduler.
+ - Stay logged in by reading the token stored at FE on refresh.
+
+# Tech used
+ - React.js: A JavaScript library for building user interfaces.
+ - Styled-components: CSS-in-JS library for styling React components.
+ - Websockets: For real time communication
+ - react-testing-lib, jest - for unit tests 

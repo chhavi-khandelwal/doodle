@@ -1,14 +1,13 @@
 import { useState, useEffect } from 'react';
 import Organizer from '../../apps/Organizer/Organizer';
 import Participant from '../../apps/Participant/Participant';
-import { ErrorPage } from '../../App';
 import { useAuth } from '../../auth/AuthProvider';
 import { useNavigate } from 'react-router-dom';
 
 const Meeting = () => {
 	const [isOrganizer, setIsOrganizer] = useState(false);
 	const [participants, setParticipants] = useState([]);
-	const { user, token } = useAuth();
+	const { token } = useAuth();
 	const navigate = useNavigate();
 
 	useEffect(() => {
@@ -17,7 +16,7 @@ const Meeting = () => {
 		}
 	}, [token]);
 	useEffect(() => {
-		fetch('http://localhost:3001/meetings/meeting1/participants', {
+		fetch(`${import.meta.env.VITE_API_URL}/meetings/meeting1/participants`, {
 			mode: 'cors',
 			headers: {
 				'Content-Type': 'application/json',

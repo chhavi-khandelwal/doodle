@@ -10,7 +10,7 @@ const app = express();
 const server = createServer(app);
 const io = new Server(server, {
 	cors: {
-		origin: 'http://localhost:5173',
+		origin: process.env.CORS_ORIGIN || '*'
 	},
 });
 
@@ -64,7 +64,7 @@ app.post('/auth/login', (req, res) => {
 	res.json({ token, user: email });
 });
 
-app.get('/meetings/123', (req, res) => {
+app.get('/meetings/meeting1', (req, res) => {
 	res.header('Access-Control-Allow-Origin', '*');
 	res.header('Access-Control-Allow-Methods', 'GET');
 	res.header(

@@ -27,7 +27,7 @@ const Home = () => {
 	};
 
 	useEffect(() => {
-		fetch(`http://localhost:3001/meetings/123`, {
+		fetch(`${import.meta.env.VITE_API_URL}/meetings/meeting1`, {
 			mode: 'cors',
 			headers: {
 				'Content-Type': 'application/json',

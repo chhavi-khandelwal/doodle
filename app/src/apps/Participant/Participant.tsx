@@ -1,10 +1,10 @@
-import { Heading, Article } from '../../App';
+import { Heading, Article, PageContainer } from '../../App';
 import Chat from '../../components/Chat';
 import PopupOpener from '../../components/PopupOpener';
 
 const Participant = () => {
 	return (
-		<div>
+		<PageContainer>
 			<Heading>Participant Page</Heading>
 			<Article>
 				Calendar and other details about the meeting come in here.
@@ -14,7 +14,7 @@ const Participant = () => {
 			<PopupOpener>
 				<Chat />
 			</PopupOpener>
-		</div>
+		</PageContainer>
 	);
 };
 
