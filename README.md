@@ -17,3 +17,5 @@ There are README.md files for both app and server to setup the app locally.
 
  It takes you to home page where Meetings can be listed, currently `Meeting 1` is listed > Click on `Meeting 1`
  Right bottom corner has `Open chat` button > Click to open chat box. Start chatting.
+
+**Checkout .env.local for PORT configuration
