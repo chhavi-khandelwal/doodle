@@ -8,7 +8,7 @@ This is a FE app architecture which lists meetings and allow group chat on login
 
  - `yarn test`  To run tests - (Only added template for popupOpener)
 
- # Architecure
+ # Architecture
  - Refer: https://miro.com/app/board/uXjVKO1CSs8=/
 
 # Further additions
